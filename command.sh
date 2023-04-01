@@ -5,7 +5,8 @@ add_user(){
     PWD=$2
     GROUP=$3 
 
-    echo useradd -d /home/$USER -g $group -p $PWD $USER 
+    useradd -m -p $(openssl passwd -1 $PWD) -g $GROUP $USER
+    echo "usuario criado" $USER
 }
 
 dirs=("public" "adm" "ven" "sec")
