@@ -5,7 +5,7 @@ add_user(){
     PWD=$2
     GROUP=$3 
 
-    useradd -m -p $(openssl passwd -1 $PWD) -g $GROUP $USER
+    useradd -m -p -s/bin/bash $(openssl passwd -1 $PWD) -g $GROUP $USER
     echo "usuario criado" $USER
 }
 
